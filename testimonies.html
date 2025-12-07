@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonies - Apostolic Ministry</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        /* Custom styles for testimonies page */
+        .hero-section-small {
+            background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(26,35,126,0.8)), 
+                        url('https://picsum.photos/id/1048/1920/1080') !important;
+            background-size: cover !important;
+            background-position: center !important;
+            position: relative;
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(145deg, #ffffff, #f8f9fa);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin: 1rem 0;
+            border-left: 5px solid var(--gold);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonial-card::before {
+            content: '\f10d';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 2rem;
+            color: rgba(26,35,126,0.1);
+        }
+        
+        .testimonial-card img {
+            border: 3px solid var(--gold);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card img:hover {
+            transform: scale(1.05);
+        }
+        
+        .carousel-indicators {
+            bottom: -50px;
+        }
+        
+        .carousel-indicators button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--royal-blue);
+            opacity: 0.5;
+        }
+        
+        .carousel-indicators .active {
+            opacity: 1;
+            background-color: var(--gold);
+        }
+        
+        #testimonyFormContainer {
+            display: none;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .share-testimony-btn {
+            background: linear-gradient(45deg, var(--royal-blue), var(--royal-blue-light));
+            border: none;
+            box-shadow: 0 4px 15px rgba(26,35,126,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .share-testimony-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(26,35,126,0.4);
+            background: linear-gradient(45deg, var(--royal-blue-light), var(--royal-blue));
+        }
+        
+        .section-divider {
+            height: 5px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 3rem auto;
+            width: 50%;
+            border-radius: 5px;
+        }
+        
+        .give-life-section {
+            background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(26,35,126,0.9)), 
+                        url('https://picsum.photos/id/292/1920/1080');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .give-life-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(255,215,0,0.2) 0%, rgba(26,35,126,0) 70%);
+            z-index: 1;
+        }
+        
+        .give-life-section .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .bible-verse {
+            font-style: italic;
+            position: relative;
+            padding: 1.5rem;
+            border-radius: 10px;
+            background-color: rgba(255,255,255,0.1);
+            backdrop-filter: blur(5px);
+            margin: 2rem auto;
+            max-width: 800px;
+        }
+        
+        .bible-verse::before,
+        .bible-verse::after {
+            content: '\f10d';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            font-size: 1.5rem;
+            color: var(--gold);
+        }
+        
+        .bible-verse::before {
+            top: 10px;
+            left: 10px;
+        }
+        
+        .bible-verse::after {
+            content: '\f10e';
+            bottom: 10px;
+            right: 10px;
+        }
+        
+        .accept-christ-btn {
+            background: linear-gradient(45deg, var(--gold), var(--gold-light));
+            color: var(--royal-blue-dark);
+            border: none;
+            font-weight: 600;
+            padding: 0.8rem 2rem;
+            box-shadow: 0 5px 20px rgba(255,215,0,0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .accept-christ-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(255,215,0,0.5);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Apostolic Ministry</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="media.html">Media</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="testimonies.html">Testimonies</a></li>
+                    <li class="nav-item"><a class="nav-link" href="philanthropy.html">Philanthropy</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section-small">
+        <div class="container text-center animate__animated animate__fadeIn">
+            <h1 class="display-4 mb-4 animate__animated animate__zoomIn">Testimonies</h1>
+            <p class="lead animate__animated animate__fadeInUp animate__delay-1s">Stories of Faith and Transformation</p>
+            <div class="mt-4 animate__animated animate__fadeInUp animate__delay-2s">
+                <i class="fas fa-quote-left fa-2x text-gold me-2 opacity-50"></i>
+                <span class="fs-5 fst-italic">"And they overcame him by the blood of the Lamb, and by the word of their testimony."</span>
+                <i class="fas fa-quote-right fa-2x text-gold ms-2 opacity-50"></i>
+                <div class="mt-2 text-gold">Revelation 12:11</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="text-center mb-5">
+                    <h2 class="mb-4 animate__animated animate__fadeInDown">Testimonies of Faith</h2>
+                    <div class="section-divider animate__animated animate__zoomIn animate__delay-1s"></div>
+                </div>
+               
+                <div id="testimonialCarousel" class="carousel slide animate__animated animate__fadeInUp" data-bs-ride="carousel" data-bs-interval="3000">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2"></button>
+                        <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="testimonial-card animate__animated animate__fadeIn">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="position-relative">
+                                        <img src="https://picsum.photos/id/237/80/80" class="rounded-circle me-3" width="80" alt="Testimonial">
+                                        <div class="position-absolute top-0 end-0 bg-gold rounded-circle d-flex align-items-center justify-content-center" style="width: 25px; height: 25px;">
+                                            <i class="fas fa-heart text-white" style="font-size: 0.8rem;"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-0 text-royal-blue">Sarah Johnson</h5>
+                                        <small class="text-muted"><i class="fas fa-map-marker-alt me-1"></i>Church Member - Lagos</small>
+                                        <div class="mt-1">
+                                            <i class="fas fa-star text-gold"></i>
+                                            <i class="fas fa-star text-gold"></i>
+                                            <i class="fas fa-star text-gold"></i>
+                                            <i class="fas fa-star text-gold"></i>
+                                            <i class="fas fa-star text-gold"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="fst-italic">"God transformed my life completely when I joined this ministry. I was struggling with addiction and depression, but through prayer and fellowship, I found peace and purpose. Now I serve as a youth leader and help others find their way to Christ."</p>
+                                <div class="text-end mt-3">
+                                    <small class="text-muted"><i class="fas fa-calendar me-1"></i>January 2024</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="testimonial-card animate__animated animate__fadeIn">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="position-relative">
+                                        <img src="https://picsum.photos/id/91/80/80" class="rounded-circle me-3" width="80" alt="Testimonial">
+                                        <div class="position-absolute top-0 end-0 bg-gold rounded-circle d-flex align-items-center justify-content-center" style="width: 25px; height: 25px;">
+                                            <i class="fas fa-praying-hands text-white" style="font-size: 0.8rem;"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-0 text-royal-blue">Michael Adebayo</h5>
+                                        <small class="text-muted"><i class="fas fa-map-marker-alt me-1"></i>Volunteer - Abuja</small>
+                                        <div class="mt-1">
+                                            <i class="fas fa-star text-gold"></i>
+                                            <i class="fas fa-star text-gold"></i>
+                                            <i class="fas fa-star text-gold"></i>
+                                            <i class="fas fa-star text-gold"></i>
+                                            <i class="fas fa-star text-gold"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="fst-italic">"After losing my job and facing financial difficulties, this ministry became my refuge. The community supported me through prayer and practical help. God provided a better job, and now I volunteer to help others in similar situations."</p>
+                                <div class="text-end mt-3">
+                                    <small class="text-muted"><i class="fas fa-calendar me-1"></i>December 2023</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="testimonial-card animate__animated animate__fadeIn">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="position-relative">
+                                        <img src="https://picsum.photos/id/64/80/80" class="rounded-circle me-3" width="80" alt="Testimonial">
+                                        <div class="position-absolute top-0 end-0 bg-gold rounded-circle d-flex align-items-center justify-content-center" style="width: 25px; height: 25px;">
+                                            <i class="fas fa-cross text-white" style="font-size: 0.8rem;"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-0 text-royal-blue">Grace Okafor</h5>
+                                        <small class="text-muted"><i class="fas fa-map-marker-alt me-1"></i>New Convert - Port Harcourt</small>
+                                        <div class="mt-1">
+                                            <i class="fas fa-star text-gold"></i>
+                                            <i class="fas fa-star text-gold"></i>
+                                            <i class="fas fa-star text-gold"></i>
+                                            <i class="fas fa-star text-gold"></i>
+                                            <i class="fas fa-star text-gold"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="fst-italic">"I came to Christ through this ministry's outreach program. The love and acceptance I experienced here changed my heart. I've been baptized and am now actively involved in evangelism, sharing the same love that was shown to me."</p>
+                                <div class="text-end mt-3">
+                                    <small class="text-muted"><i class="fas fa-calendar me-1"></i>February 2024</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="testimonial-card animate__animated animate__fadeIn">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="position-relative">
+                                        <img src="https://picsum.photos/id/65/80/80" class="rounded-circle me-3" width="80" alt="Testimonial">
+                                        <div class="position-absolute top-0 end-0 bg-gold rounded-circle d-flex align-items-center justify-content-center" style="width: 25px; height: 25px;">
+                                            <i class="fas fa-dove text-white" style="font-size: 0.8rem;"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-0 text-royal-blue">David Emeka</h5>
+                                        <small class="text-muted"><i class="fas fa-map-marker-alt me-1"></i>Elder - Kano</small>
+                                        <div class="mt-1">
+                                            <i class="fas fa-star text-gold"></i>
+                                            <i class="fas fa-star text-gold"></i>
+                                            <i class="fas fa-star text-gold"></i>
+                                            <i class="fas fa-star text-gold"></i>
+                                            <i class="fas fa-star text-gold"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="fst-italic">"This ministry helped restore my marriage when it was on the brink of divorce. Through counseling and prayer, God healed our relationship. We now serve together as marriage counselors, helping other couples find hope and restoration."</p>
+                                <div class="text-end mt-3">
+                                    <small class="text-muted"><i class="fas fa-calendar me-1"></i>November 2023</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                
+                <!-- Share Testimony Button -->
+                <div class="text-center mt-5">
+                    <button class="btn share-testimony-btn btn-lg animate__animated animate__pulse animate__infinite" data-bs-toggle="modal" data-bs-target="#testimonyModal">
+                        <i class="fas fa-plus-circle me-2"></i>Share Your Testimony
+                    </button>
+                </div>
+<!-- Testimony Submission Modal -->
+<div class="modal fade" id="testimonyModal" tabindex="-1" aria-labelledby="testimonyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-royal-blue text-white">
+                <h5 class="modal-title" id="testimonyModalLabel">
+                    <i class="fas fa-heart me-2"></i>Share Your Testimony
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center mb-4">
+                    <i class="fas fa-quote-left fa-3x text-gold mb-3"></i>
+                    <p class="lead">"Let the redeemed of the Lord tell their story" - Psalm 107:2</p>
+                </div>
+                <form id="testimonyForm">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="name" class="form-label"><i class="fas fa-user me-2"></i>Full Name</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="city" class="form-label"><i class="fas fa-map-marker-alt me-2"></i>City</label>
+                            <input type="text" class="form-control" id="city" name="city" placeholder="Enter your city" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label"><i class="fas fa-envelope me-2"></i>Email (Optional)</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="testimony" class="form-label"><i class="fas fa-pen me-2"></i>Your Testimony</label>
+                        <textarea class="form-control" id="testimony" name="testimony" rows="5" placeholder="Share how God has worked in your life..." required></textarea>
+                        <div class="form-text">Tell us about your journey of faith, how God has transformed your life, or any miracle you've experienced.</div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="consent" name="consent" required>
+                            <label class="form-check-label" for="consent">
+                                I consent to sharing my testimony publicly to encourage others in their faith journey.
+                            </label>
+                        </div>
+                    </div>
+                </form>
+                <div id="formSuccess" class="alert alert-success d-none">
+                    <i class="fas fa-check-circle me-2"></i>Thank you for sharing your testimony! It will be reviewed and may be featured to inspire others.
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    <i class="fas fa-times me-2"></i>Cancel
+                </button>
+                <button type="submit" form="testimonyForm" class="btn share-testimony-btn">
+                    <i class="fas fa-paper-plane me-2"></i>Submit Testimony
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="give-life-section">
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <i class="fas fa-cross fa-4x text-gold mb-4 animate__animated animate__zoomIn"></i>
+                    <h2 class="mb-4 animate__animated animate__fadeInUp">Give Your Life to Christ</h2>
+                    <div class="bible-verse animate__animated animate__fadeInUp animate__delay-1s">
+                        <p class="lead mb-0">"For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life."</p>
+                        <small class="text-gold fw-bold">- John 3:16</small>
+                    </div>
+                    <div class="mt-4 animate__animated animate__fadeInUp animate__delay-2s">
+                        <p class="mb-4">Take the most important step of your life today. Accept Jesus Christ as your Lord and Savior and experience the transforming power of God's love.</p>
+                        <div class="d-flex flex-column flex-md-row gap-3 justify-content-center">
+                            <button class="btn accept-christ-btn btn-lg" data-bs-toggle="modal" data-bs-target="#salvationModal">
+                                <i class="fas fa-heart me-2"></i>Accept Christ Today
+                            </button>
+                            <a href="#" class="btn btn-outline-light btn-lg">
+                                <i class="fas fa-book-open me-2"></i>Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Salvation Modal -->
+    <div class="modal fade" id="salvationModal" tabindex="-1" aria-labelledby="salvationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-gold text-royal-blue">
+                    <h5 class="modal-title fw-bold" id="salvationModalLabel">
+                        <i class="fas fa-cross me-2"></i>Accept Jesus Christ as Your Lord and Savior
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="mb-4">
+                        <i class="fas fa-heart fa-4x text-danger mb-3 animate__animated animate__heartBeat animate__infinite"></i>
+                        <h3 class="text-royal-blue mb-3">God Loves You!</h3>
+                        <div class="bible-verse bg-light p-4 rounded mb-4">
+                            <p class="lead mb-2 text-dark">"For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life."</p>
+                            <small class="text-gold fw-bold">- John 3:16</small>
+                        </div>
+                    </div>
+                    
+                    <div class="row text-start mb-4">
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-start">
+                                <i class="fas fa-exclamation-triangle text-warning me-3 mt-1"></i>
+                                <div>
+                                    <h6 class="fw-bold text-royal-blue">We Are All Sinners</h6>
+                                    <p class="small mb-0">"For all have sinned and fall short of the glory of God." - Romans 3:23</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-start">
+                                <i class="fas fa-cross text-royal-blue me-3 mt-1"></i>
+                                <div>
+                                    <h6 class="fw-bold text-royal-blue">Jesus Died For Us</h6>
+                                    <p class="small mb-0">"But God demonstrates his own love for us in this: While we were still sinners, Christ died for us." - Romans 5:8</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-start">
+                                <i class="fas fa-gift text-gold me-3 mt-1"></i>
+                                <div>
+                                    <h6 class="fw-bold text-royal-blue">Salvation is Free</h6>
+                                    <p class="small mb-0">"For the wages of sin is death, but the gift of God is eternal life in Christ Jesus our Lord." - Romans 6:23</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="d-flex align-items-start">
+                                <i class="fas fa-praying-hands text-success me-3 mt-1"></i>
+                                <div>
+                                    <h6 class="fw-bold text-royal-blue">Call Upon Jesus</h6>
+                                    <p class="small mb-0">"If you declare with your mouth, 'Jesus is Lord,' and believe in your heart that God raised him from the dead, you will be saved." - Romans 10:9</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-royal-blue text-white p-4 rounded mb-4">
+                        <h5 class="mb-3"><i class="fas fa-pray me-2"></i>Pray This Prayer</h5>
+                        <p class="fst-italic mb-0">"Dear Jesus, I know that I am a sinner and I need Your forgiveness. I believe that You died on the cross for my sins and rose from the dead. I want to turn from my sins and invite You to come into my heart and life. I want to trust and follow You as my Lord and Savior. In Your Name I pray, Amen."</p>
+                    </div>
+                    
+                    <div class="alert alert-success">
+                        <i class="fas fa-check-circle me-2"></i>
+                        <strong>If you prayed this prayer sincerely, you are now a child of God!</strong>
+                        <br><small>"Therefore, if anyone is in Christ, the new creation has come: The old has gone, the new is here!" - 2 Corinthians 5:17</small>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                        <i class="fas fa-times me-2"></i>Close
+                    </button>
+                    <a href="contact.html" class="btn accept-christ-btn">
+                        <i class="fas fa-phone me-2"></i>Contact Us for Prayer
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Enhanced carousel auto-rotation with smooth transitions
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.getElementById('testimonialCarousel');
+            const carouselInstance = new bootstrap.Carousel(carousel, {
+                interval: 3000,
+                ride: 'carousel',
+                pause: 'hover',
+                wrap: true
+            });
+            
+            // Add fade effect to testimonial cards
+            carousel.addEventListener('slide.bs.carousel', function (e) {
+                const activeCard = e.relatedTarget.querySelector('.testimonial-card');
+                if (activeCard) {
+                    activeCard.classList.add('animate__animated', 'animate__fadeInUp');
+                }
+            });
+            
+            // Remove animation classes after animation completes
+            carousel.addEventListener('slid.bs.carousel', function (e) {
+                const cards = carousel.querySelectorAll('.testimonial-card');
+                cards.forEach(card => {
+                    card.classList.remove('animate__animated', 'animate__fadeInUp');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

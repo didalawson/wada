@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact · Apostle Wada Ministries</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="Index.html#home">
+                <i class="fa-solid fa-dove me-2"></i>
+                Apostle Wada Ministries
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="Index.html#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Index.html#mission">Mission</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Index.html#outreaches">Outreaches</a></li>
+                    <li class="nav-item"><a class="nav-link" href="media.html">Media</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Index.html#impact">Impact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Index.html#stories">Stories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="philanthropy.html">Philanthropy</a></li>
+                    <li class="nav-item"><a class="nav-link" href="partner.html">Partner</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="about.html">About the Apostle</a></li>
+                            <li><a class="dropdown-item" href="media.html">Media Hub</a></li>
+                            <li><a class="dropdown-item" href="testimonies.html">Testimonies</a></li>
+                            <li><a class="dropdown-item" href="philanthropy.html">Philanthropy</a></li>
+                            <li><a class="dropdown-item active" href="contact.html">Contact</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section-small">
+        <div class="container text-center">
+            <span class="hero-eyebrow">We Would Love To Hear From You</span>
+            <h1 class="display-4 mb-3">Connect With Apostle Wada Ministries</h1>
+            <p class="lead mx-auto" style="max-width: 640px;">Reach out for prayer support, counseling, invitations, or partnership inquiries. Our global team is ready to stand with you.</p>
+            <div class="d-flex justify-content-center gap-3 mt-4 flex-wrap">
+                <a href="#contact-form" class="cta-button">Request Prayer</a>
+                <a href="partner.html" class="cta-button-outline">Become A Partner</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-7" data-animation="fadeInUp" id="contact-form">
+                    <div class="glass-card p-4 p-lg-5">
+                        <span class="section-eyebrow">Send A Message</span>
+                        <h2 class="mb-4">How Can We Serve You?</h2>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label text-muted-80" for="fullName">Full Name</label>
+                                    <input type="text" class="form-control" id="fullName" placeholder="John &amp; Mary Doe" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label text-muted-80" for="email">Email Address</label>
+                                    <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label text-muted-80" for="phone">Phone / WhatsApp</label>
+                                    <input type="tel" class="form-control" id="phone" placeholder="+234 800 000 4444">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label text-muted-80" for="requestType">Request Type</label>
+                                    <select id="requestType" class="form-select">
+                                        <option value="prayer" selected>Prayer &amp; Counseling</option>
+                                        <option value="invite">Invite Apostle Wada</option>
+                                        <option value="partnership">Partnership Enquiry</option>
+                                        <option value="testimony">Testimony Submission</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label text-muted-80" for="message">Message</label>
+                                    <textarea id="message" class="form-control" rows="5" placeholder="Share the details of your request..." required></textarea>
+                                </div>
+                                <div class="col-12 d-flex align-items-center gap-3">
+                                    <button type="submit" class="cta-button">Send Message</button>
+                                    <span class="text-muted-80 small"><i class="fa-solid fa-lock me-2"></i>We keep your information confidential.</span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-5" data-animation="fadeInUp" data-delay="0.15">
+                    <div class="d-flex flex-column gap-4">
+                        <div class="glass-card p-4">
+                            <span class="section-eyebrow">Global Headquarters</span>
+                            <h3 class="mb-3">Visit Our Apostolic Center</h3>
+                            <p class="mb-3 text-muted-80">42 Kingdom Avenue, Victoria Island, Lagos, Nigeria.</p>
+                            <div class="mini-stat"><i class="fa-solid fa-location-dot"></i> Sunday Services: 8 AM &amp; 10 AM WAT</div>
+                            <div class="mini-stat"><i class="fa-solid fa-building"></i> Office Hours: Mon–Sat, 9 AM – 5 PM</div>
+                        </div>
+                        <div class="glass-card p-4">
+                            <span class="section-eyebrow">Reach The Ministry</span>
+                            <div class="d-flex flex-column gap-3">
+                                <div class="d-flex gap-3 align-items-start">
+                                    <span class="feature-card-icon"><i class="fa-solid fa-phone-volume"></i></span>
+                                    <div>
+                                        <h5>Prayer Line</h5>
+                                        <p class="mb-1 text-muted-80">+234 (0) 800 777 7777</p>
+                                        <small class="text-muted">24/7 Pastoral Team</small>
+                                    </div>
+                                </div>
+                                <div class="d-flex gap-3 align-items-start">
+                                    <span class="feature-card-icon"><i class="fa-solid fa-envelope-open-text"></i></span>
+                                    <div>
+                                        <h5>Email</h5>
+                                        <p class="mb-1 text-muted-80">care@apostlewada.org</p>
+                                        <small class="text-muted">Partnership &amp; Media: media@apostlewada.org</small>
+                                    </div>
+                                </div>
+                                <div class="d-flex gap-3 align-items-start">
+                                    <span class="feature-card-icon"><i class="fa-brands fa-whatsapp"></i></span>
+                                    <div>
+                                        <h5>WhatsApp</h5>
+                                        <p class="mb-1 text-muted-80">+234 (0) 800 000 2222</p>
+                                        <small class="text-muted">Instant responses during office hours</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="glass-card p-4">
+                            <span class="section-eyebrow">International Offices</span>
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-3">
+                                    <strong>North America Hub</strong><br>
+                                    220 Revival Way, Dallas, TX • +1 (214) 555-1020
+                                </li>
+                                <li class="mb-3">
+                                    <strong>Europe Hub</strong><br>
+                                    18 Kingdom Plaza, London • +44 20 7946 0400
+                                </li>
+                                <li class="mb-0">
+                                    <strong>Africa Missions Base</strong><br>
+                                    77 Hope Street, Nairobi • +254 705 000 888
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-soft">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-6" data-animation="fadeInUp">
+                    <div class="hero-card">
+                        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Counseling session">
+                        <div class="hero-card-content">
+                            <h5>Pastoral Counseling &amp; Mentorship</h5>
+                            <p>Book a session with our ministry team for counseling, deliverance, or mentorship pathways.</p>
+                            <a href="#" class="cta-button-outline cta-button-sm">Schedule A Session</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-animation="fadeInUp" data-delay="0.15">
+                    <div class="glass-card p-4 p-lg-5">
+                        <span class="section-eyebrow">Frequently Asked</span>
+                        <h3 class="mb-3">Need Quick Answers?</h3>
+                        <div class="accordion" id="contactFaq">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="faqOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        How do I invite Apostle Wada to speak?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#contactFaq">
+                                    <div class="accordion-body text-muted-80">
+                                        Fill the form selecting “Invite Apostle Wada” and our protocol team will contact you within 72 hours with next steps and availability.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="faqTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Can I submit prayer requests anonymously?
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#contactFaq">
+                                    <div class="accordion-body text-muted-80">
+                                        Yes. Leave your name blank or type “Anonymous” and our intercessory team will still cover your request diligently.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="faqThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        How can I volunteer or join a campus?
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#contactFaq">
+                                    <div class="accordion-body text-muted-80">
+                                        Indicate interest in the message field and our assimilation team will guide you through volunteer onboarding or connecting with the closest campus.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mini-stat mt-4"><i class="fa-solid fa-circle-info"></i> Need immediate help? Call the prayer line listed above.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-heading text-center mb-5" data-animation="fadeInUp">
+                <div class="section-eyebrow justify-content-center">Immediate Support</div>
+                <h2 class="display-6 mb-3">Connect With The Right Team In Minutes</h2>
+                <p class="lead">We’ve streamlined every request so you can receive prayer, counseling, or logistical help without delay.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4" data-animation="fadeInUp">
+                    <div class="glass-card p-4 h-100">
+                        <span class="pill-badge mb-3"><i class="fa-solid fa-hands-praying me-2"></i> Prayer Desk</span>
+                        <h4>Emergency Prayer &amp; Counseling</h4>
+                        <p class="text-muted-80">24/7 intercessors available for urgent calls, grief counseling, and deliverance support.</p>
+                        <ul class="list-unstyled text-muted-80 small mb-4">
+                            <li class="mb-2"><i class="fa-solid fa-phone me-2 text-gold"></i> +234 (0) 800 777 7777</li>
+                            <li class="mb-2"><i class="fa-brands fa-whatsapp me-2 text-gold"></i> WhatsApp Rapid Line</li>
+                            <li><i class="fa-solid fa-clock me-2 text-gold"></i> Average wait: &lt; 5 mins</li>
+                        </ul>
+                        <a href="#contact-form" class="cta-button w-100">Submit A Prayer Request</a>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-animation="fadeInUp" data-delay="0.1">
+                    <div class="glass-card p-4 h-100">
+                        <span class="pill-badge mb-3"><i class="fa-solid fa-id-card-clip me-2"></i> Protocol</span>
+                        <h4>Invitations &amp; Events</h4>
+                        <p class="text-muted-80">Dedicated protocol officers coordinate crusades, conferences, and campus visitations.</p>
+                        <ul class="list-unstyled text-muted-80 small mb-4">
+                            <li class="mb-2"><strong>Response Time:</strong> 72 hours</li>
+                            <li class="mb-2"><strong>Coverage:</strong> Africa, Europe, North America</li>
+                            <li><strong>Support:</strong> Visas, travel, media, hospitality</li>
+                        </ul>
+                        <a href="partner.html#invite" class="cta-button-outline w-100">View Invite Checklist</a>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-animation="fadeInUp" data-delay="0.2">
+                    <div class="glass-card p-4 h-100">
+                        <span class="pill-badge mb-3"><i class="fa-solid fa-hand-holding-heart me-2"></i> Compassion</span>
+                        <h4>Relief &amp; Philanthropy Requests</h4>
+                        <p class="text-muted-80">Need food relief, school fees, or medical aid? Our Hope Alive team triages requests monthly.</p>
+                        <ul class="list-unstyled text-muted-80 small mb-4">
+                            <li class="mb-2"><i class="fa-solid fa-bowl-food me-2 text-gold"></i> Food Banks &amp; Care Packs</li>
+                            <li class="mb-2"><i class="fa-solid fa-graduation-cap me-2 text-gold"></i> Tuition &amp; Scholarship Aid</li>
+                            <li><i class="fa-solid fa-stethoscope me-2 text-gold"></i> Medical Missions Support</li>
+                        </ul>
+                        <a href="philanthropy.html#give" class="cta-button w-100">Request Compassion Support</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <h5>Apostle Wada Ministries</h5>
+                    <p class="mb-3">Raising a prophetic, prayerful, and generous army that reveals Jesus to the nations.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" aria-label="Spotify Podcast"><i class="fa-brands fa-spotify"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-3">
+                    <h5>Visit &amp; Connect</h5>
+                    <p class="mb-1">Head Office: 42 Kingdom Avenue, Lagos, Nigeria</p>
+                    <p class="mb-1">Email: care@apostlewada.org</p>
+                    <p class="mb-0">Phone: +234 (0) 800 777 7777</p>
+                </div>
+                <div class="col-lg-4 col-md-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled mb-3">
+                        <li><a href="Index.html#mission">Our Vision &amp; Beliefs</a></li>
+                        <li><a href="Index.html#outreaches">Ministry Expressions</a></li>
+                        <li><a href="partner.html">Partner With Us</a></li>
+                        <li><a href="media.html">Media Hub</a></li>
+                    </ul>
+                    <a href="partner.html" class="cta-button-outline cta-button-sm">Give A Seed</a>
+                </div>
+            </div>
+            <div class="footer-bottom mt-5">
+                &copy; <span id="year"></span> Apostle Wada Ministries International. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
+

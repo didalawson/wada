@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Apostolic Ministry</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        /* Modern About Page Styles */
+        .hero-section-small {
+            height: 70vh;
+            background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(26,35,126,0.9)), 
+                        url('img/IMG-20251117-WA0014.jpg') !important;
+            background-size: cover !important;
+            background-position: center !important;
+            background-attachment: fixed;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .hero-section-small::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 70%, rgba(255,215,0,0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(26,35,126,0.4) 0%, transparent 50%);
+            animation: floatingOrbs 12s ease-in-out infinite;
+        }
+        
+        .hero-section-small::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        @keyframes floatingOrbs {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(120deg); }
+            66% { transform: translateY(10px) rotate(240deg); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 3;
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            margin-bottom: 1.5rem;
+            animation: titleGlow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes titleGlow {
+            0% { filter: drop-shadow(0 0 10px rgba(255,215,0,0.3)); }
+            100% { filter: drop-shadow(0 0 20px rgba(255,215,0,0.6)); }
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: rgba(255,255,255,0.9);
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background: linear-gradient(to bottom, var(--gold), var(--royal-blue));
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 10px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            padding: 20px 30px;
+            background: white;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--gold);
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            border-left: none;
+            border-right: 5px solid var(--royal-blue);
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .timeline-content h4 {
+            color: var(--royal-blue);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-content p {
+            margin: 0;
+            color: var(--dark-gray);
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -12px;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+            background: var(--gold);
+            box-shadow: 0 0 0 4px rgba(255, 215, 0, 0.2);
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            left: -13px;
+            background: var(--royal-blue);
+            box-shadow: 0 0 0 4px rgba(26, 35, 126, 0.2);
+        }
+        
+        .apostle-img-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+        
+        .apostle-img-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--gold), transparent);
+            opacity: 0.3;
+            z-index: 1;
+        }
+        
+        .apostle-img-container img {
+            transition: transform 0.5s ease;
+        }
+        
+        .apostle-img-container:hover img {
+            transform: scale(1.05);
+        }
+        
+        .belief-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            height: 100%;
+        }
+        
+        .belief-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .belief-card .card-body {
+            position: relative;
+            z-index: 1;
+            background: linear-gradient(145deg, #ffffff, #f8f9fa);
+        }
+        
+        .belief-card .card-body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--gold), var(--royal-blue));
+            z-index: 2;
+        }
+        
+        .belief-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--royal-blue-light), var(--royal-blue));
+            color: white;
+            margin-bottom: 1.5rem;
+            position: relative;
+            box-shadow: 0 10px 20px rgba(26, 35, 126, 0.3);
+        }
+        
+        .belief-icon::after {
+            content: '';
+            position: absolute;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 2px dashed var(--gold);
+            animation: spin 15s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .journey-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .journey-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--gold);
+        }
+        
+        .journey-item::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 20px;
+            width: 2px;
+            height: calc(100% + 10px);
+            background: var(--gold);
+        }
+        
+        .journey-item:last-child::after {
+            display: none;
+        }
+        
+        .bible-quote {
+            position: relative;
+            padding: 2rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            margin: 2rem 0;
+            border-left: 4px solid var(--gold);
+        }
+        
+        .bible-quote::before {
+            content: '\f10d';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            font-size: 2rem;
+            color: var(--gold);
+            background: var(--royal-blue);
+            padding: 0 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation (Same as index.html) -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Apostolic Ministry</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="media.html">Media</a></li>
+                    <li class="nav-item"><a class="nav-link" href="testimonies.html">Testimonies</a></li>
+                    <li class="nav-item"><a class="nav-link" href="philanthropy.html">Philanthropy</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Hero Section -->
+    <section class="hero-section-small">
+        <div class="container text-center" data-animation="animate__fadeIn">
+            <h1 class="display-4 mb-4">About Our Ministry</h1>
+            <p class="lead">Walking in Faith, Serving with Love</p>
+        </div>
+    </section>
+
+    <!-- Biography Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6" data-animation="animate__fadeInLeft">
+                    <img src="img/IMG-20251117-WA0004.jpg" alt="Apostle" class="img-fluid rounded-3 shadow">
+                </div>
+                <div class="col-md-6" data-animation="animate__fadeInRight">
+                    <h2 class="mb-4">Our Apostle's Journey</h2>
+                    <p class="lead">A Life Dedicated to God's Service</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <div class="mt-4">
+                        <h5><i class="fas fa-church me-2"></i>Spiritual Journey</h5>
+                        <p>Details about spiritual journey and calling...</p>
+                        
+                        <h5><i class="fas fa-heart me-2"></i>Core Values</h5>
+                        <p>Our fundamental beliefs and principles...</p>
+                        
+                        <h5><i class="fas fa-hands-helping me-2"></i>Vision</h5>
+                        <p>Our vision for the future of the ministry...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ministry History Timeline -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5" data-animation="animate__fadeIn">Our Journey Through the Years</h2>
+            <div class="timeline">
+                <div class="timeline-item" data-animation="animate__fadeInLeft">
+                    <div class="timeline-content">
+                        <h4>2010</h4>
+                        <p>Ministry Foundation</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-animation="animate__fadeInRight">
+                    <div class="timeline-content">
+                        <h4>2015</h4>
+                        <p>Global Expansion</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-animation="animate__fadeInLeft">
+                    <div class="timeline-content">
+                        <h4>2020</h4>
+                        <p>Digital Transformation</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-animation="animate__fadeInRight">
+                    <div class="timeline-content">
+                        <h4>Present</h4>
+                        <p>Continuing God's Work</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Beliefs -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-animation="animate__fadeIn">Our Core Beliefs</h2>
+            <div class="row g-4">
+                <div class="col-md-4" data-animation="animate__fadeInUp">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-bible fa-3x mb-3 text-primary"></i>
+                            <h5 class="card-title">Scripture</h5>
+                            <p class="card-text">We believe in the authority and inspiration of the Holy Bible.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-animation="animate__fadeInUp">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-dove fa-3x mb-3 text-primary"></i>
+                            <h5 class="card-title">Holy Spirit</h5>
+                            <p class="card-text">We believe in the power and presence of the Holy Spirit.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-animation="animate__fadeInUp">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-hands-helping fa-3x mb-3 text-primary"></i>
+                            <h5 class="card-title">Service</h5>
+                            <p class="card-text">We believe in serving others as Christ served us.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Same as index.html) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5>Contact Us</h5>
+                    <p>Email: info@apostolicministry.org<br>Phone: (555) 123-4567</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html" class="text-white">About Us</a></li>
+                        <li><a href="media.html" class="text-white">Media</a></li>
+                        <li><a href="testimonies.html" class="text-white">Testimonies</a></li>
+                        <li><a href="philanthropy.html" class="text-white">Philanthropy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Follow Us</h5>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
